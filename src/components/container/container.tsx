@@ -1,7 +1,18 @@
-const Container = () => {
+type ContainerType = {
+  containerClassNames?: string
+  header?: React.ReactNode
+  children?: React.ReactNode
+  mainSectionClassNames?: string
+  footer?: React.ReactNode
+}
+
+const Container = (props: ContainerType) => {
+  const { containerClassNames, header, children, mainSectionClassNames, footer } = props
   return (
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi minima omnis saepe voluptatum veniam tenetur consequuntur architecto sequi ad fuga earum reiciendis ea consectetur, cumque quaerat odio reprehenderit distinctio fugiat!
+    <div className={`w-screen h-screen ${containerClassNames}`}>
+      {header && header}
+      {children && <main className={`size-full ${mainSectionClassNames}`}> {children} </main>}
+      {footer && footer}
     </div>
   )
 }

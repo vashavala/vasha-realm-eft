@@ -32,3 +32,8 @@ body {
   background-color: var(--bgc);
   color: var(--tc);
 }
+
+html, body{
+  width: 100vw;
+  height: 100vh;
+}
