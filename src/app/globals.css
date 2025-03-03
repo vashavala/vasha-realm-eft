@@ -26,6 +26,7 @@ body {
 :root {
   --bgc: #000;
   --tc: #fff;
+  --eftc: #9a8866;
 }
 
 body {
@@ -33,7 +34,8 @@ body {
   color: var(--tc);
 }
 
-html, body{
+html,
+body {
   width: 100vw;
   height: 100vh;
 }
