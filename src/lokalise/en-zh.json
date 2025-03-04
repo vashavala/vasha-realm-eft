@@ -1,0 +1,10 @@
+{
+  "common": {
+    "cancel": "取消",
+    "confirm": "确定"
+  },
+  "task": {
+    "title": "任务标题",
+    "description": "描述"
+  }
+}

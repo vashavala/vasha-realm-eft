@@ -1,0 +1,10 @@
+{
+  "common": {
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "task": {
+    "title": "Task Title",
+    "description": "Description"
+  }
+}
