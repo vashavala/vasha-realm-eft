@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components";
 import { useTranslation } from "@/utils/i18n";
 import { Header } from "@/biz-components";
-import SvgPanel from "@/svgs/svg-panel";
+// import SvgPanel from "@/svgs/svg-panel";
 
 
 export default function Home() {
