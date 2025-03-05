@@ -1,10 +1,5 @@
 {
-  "common": {
-    "cancel": "Cancel",
-    "confirm": "Confirm"
-  },
-  "task": {
-    "title": "Task Title",
-    "description": "Description"
+  "home": {
+    "go_see_rfk_quests": "Go see all quests that kappa required."
   }
 }

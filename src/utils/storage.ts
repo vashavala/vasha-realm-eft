@@ -1,33 +1,26 @@
 const PREFIX = 'vasha-';
-const processKey = (key: string) => PREFIX + key;
-const serialize = <T>(value: T): string => JSON.stringify({ value, type: typeof value })
-const deserialize = <T>(value: string): T | null => {
-  try {
-    const parsed = JSON.parse(value);
-    return parsed.value as T;
-  } catch (e) {
-    console.error('Storage deserialize failed: ', e);
-    return null;
-  }
-};
+const processKey = (key: string) =>
+  key.startsWith(PREFIX) ? key : PREFIX + key;
+
 export const storage = {
-  setItem: <T>(key: string, value: T): void => {
+  setItem: <T>(key: string, value: T): T => {
     try {
       const processedKey = processKey(key);
-      const serializedValue = serialize(value);
+      const serializedValue = JSON.stringify(value ?? null);
       localStorage.setItem(processedKey, serializedValue);
     } catch (e) {
-      console.error('Storage save failed: ', e);
+      console.error('Storage save failed:', e);
     }
+    return value;
   },
 
   getItem: <T>(key: string): T | null => {
     try {
       const processedKey = processKey(key);
       const value = localStorage.getItem(processedKey);
-      return value ? deserialize<T>(value) : null;
+      return value !== null ? JSON.parse(value) as T : null;
     } catch (e) {
-      console.error('Storage read failed: ', e);
+      console.error('Storage read failed:', e);
       return null;
     }
   },
@@ -37,19 +30,17 @@ export const storage = {
       const processedKey = processKey(key);
       localStorage.removeItem(processedKey);
     } catch (e) {
-      console.error('Storage remove failed: ', e);
+      console.error('Storage remove failed:', e);
     }
   },
 
   clearAll: (): void => {
     try {
       Object.keys(localStorage).forEach(key => {
-        if (key.startsWith(PREFIX)) {
-          localStorage.removeItem(key);
-        }
+        if (key.startsWith(PREFIX)) localStorage.removeItem(key)
       });
     } catch (e) {
-      console.error('Storage clean failed: ', e);
+      console.error('Storage clean failed:', e);
     }
   }
 };
