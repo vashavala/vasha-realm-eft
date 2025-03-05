@@ -1,5 +1,12 @@
 {
   "home": {
     "go_see_rfk_quests": "Go see all quests that kappa required."
+  },
+  "header": {
+    "settings": {
+      "language": "Language",
+      "en": "English",
+      "zh": "Chinese"
+    }
   }
 }

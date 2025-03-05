@@ -9,7 +9,7 @@ const QuestsPage = () => {
     <Container>
       <div className="size-full overflow-auto">
         {rowArr.map(row => <div key={row} className="whitespace-nowrap">
-          {colArr.map(col => <div key={col} className="inline-block w-[8rem] aspect-square outline">{row}-{col}</div>)}
+          {colArr.map(col => <div key={col} className="inline-block w-[12rem] aspect-square outline">{row}-{col}</div>)}
         </div>)}
       </div>
     </Container>

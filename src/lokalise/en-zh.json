@@ -1,5 +1,12 @@
 {
   "home": {
     "go_see_rfk_quests": "查看所有3x4所需完成的任务"
+  },
+  "header": {
+    "settings": {
+      "language": "语言",
+      "en": "英文",
+      "zh": "中文"
+    }
   }
 }

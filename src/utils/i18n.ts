@@ -1,13 +1,16 @@
 import { storage } from "./storage";
 import { en_en, en_zh } from "@/lokalise"
 
-type Language = 'en' | 'zh-CN';
-type TranslationResources = Record<string, string | Record<string, string>>;
+export type Language = 'en' | 'zh';
+interface NestedTranslationResources {
+  [key: string]: string | NestedTranslationResources;
+}
+type TranslationResources = NestedTranslationResources;
 
 const DEFAULT_LANGUAGE: Language = 'en';
 const RESOURCES: Record<Language, TranslationResources> = {
   'en': en_en,
-  'zh-CN': en_zh
+  'zh': en_zh
 };
 
 let currentLang: Language | null = null;
@@ -33,6 +36,7 @@ export const setLang = (lang: Language) => {
   if (!(lang in RESOURCES)) return;
   currentLang = lang;
   storage.setItem('lang', lang);
+  window?.location?.reload()
 };
 
 const translate = (key: string, translations: TranslationResources): string => {
