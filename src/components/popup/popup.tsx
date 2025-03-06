@@ -31,7 +31,7 @@ const Popup = forwardRef<PopupHandle, PopupProps>((props, ref) => {
     hide: handleHide,
   }));
   return show && (
-    <div className={`z-[100] fixed inset-0 backdrop-blur-[.2rem] ${maskClassName}`}>
+    <div className={`z-[100] fixed inset-0 w-screen h-screen bg-black/50 backdrop-blur-[2rem] ${maskClassName}`}>
       <div className={`
           absolute
           portrait:w-[60vw] landscape:h-[60vh] aspect-[1/1.618]

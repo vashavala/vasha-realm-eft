@@ -25,7 +25,8 @@ const Header = () => {
 
   return (
     <header className="
-      z-50 fixed inset-x-0 top-0 flex justify-between items-stretch shadow-2xl shadow-white/20
+      z-50 fixed inset-x-0 top-0 flex justify-between items-stretch
+      shadow-2xl shadow-white/20 backdrop-blur-xs
       *:aspect-square *:flex *:items-center *:justify-center
       h-[4rem]
     ">
