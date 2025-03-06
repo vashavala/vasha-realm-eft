@@ -12,7 +12,6 @@ function removeKeyRecursively(obj, targetKey) {
   }
 }
 
-// 使用示例
 const array = json.map((obj) => {
   removeKeyRecursively(obj, "visibilityConditions");
   removeKeyRecursively(obj, "completeInSeconds");
